@@ -1,5 +1,9 @@
 Airplane ship;
+ArrayList <Asteroid> six7 = new ArrayList();
 Star[] whenfield;
+  Asteroid ast1 = new Asteroid();  
+  Asteroid ast2 = new Asteroid();  
+  Asteroid ast3 = new Asteroid();  
 public void setup() 
 {
   size(800, 800);
@@ -8,8 +12,11 @@ public void setup()
   for (int i = 0; i < whenfield.length; i++) {
     whenfield[i] = new Star();
   }
+  for(int i = 0; i  <= 5; i++){
+  six7.add(new Asteroid());};
+ 
 }
-public void draw() 
+public void draw()
 {
   background(0);
   for (int i = 0; i < whenfield.length; i++) {
@@ -18,6 +25,13 @@ public void draw()
   }
   ship.move();
   ship.show();
+  for (int i = 0; i < six7.size(); i++) {
+    Asteroid speed = six7.get(i);
+    speed.turn(speed.omega);
+    if(dist((float)speed.myCenterX, (float)speed.myCenterY, (float)ship.myCenterX, (float)ship.myCenterY) <= 30)six7.remove(i);
+    speed.show();
+    speed.move();
+  }
 }
 
 void mouseClicked(){

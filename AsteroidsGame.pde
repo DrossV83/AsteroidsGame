@@ -1,5 +1,5 @@
-Airplane ship;
 ArrayList <Asteroid> six7 = new ArrayList();
+Airplane ship;
 ArrayList <bullet> touhou = new ArrayList();
 Star[] whenfield;
 

@@ -1,12 +1,12 @@
 ArrayList <Asteroid> six7 = new ArrayList();
-Airplane ship;
+Airplane ship = new Airplane();
 ArrayList <bullet> touhou = new ArrayList();
 Star[] whenfield;
 
 public void setup() 
 {
   size(800, 800);
-  ship = new Airplane();
+  //ship = new Airplane();
   whenfield = new Star[100];
   for (int i = 0; i < whenfield.length; i++) {
     whenfield[i] = new Star();

@@ -39,4 +39,18 @@ class Airplane extends Floater
   public boolean isAccelerating() {
     return accelerating;
   }
+  public double returnmov(char bruh){
+    if (bruh == 'x') return myXspeed;
+    else if(bruh == 'y') return myYspeed;
+    else return 0;
+  }
+  public double[] coords(){
+    double[] khaby = new double[2];
+    khaby[0] = myCenterX;
+    return khaby;
+    }
+  public double returnAngle() {
+    double asdf = myPointDirection;
+    return asdf;
+    }
 }

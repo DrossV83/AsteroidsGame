@@ -1,12 +1,12 @@
 ArrayList <Asteroid> six7 = new ArrayList();
-Airplane ship = new Airplane();
+Airplane jobber
 ArrayList <bullet> touhou = new ArrayList();
 Star[] whenfield;
 
 public void setup() 
 {
   size(800, 800);
-  //ship = new Airplane();
+  jobber = new Airplane();
   whenfield = new Star[100];
   for (int i = 0; i < whenfield.length; i++) {
     whenfield[i] = new Star();
@@ -24,12 +24,12 @@ public void draw()
     whenfield[i].move();
     whenfield[i].show();
   }
-  ship.move();
-  ship.show();
+  jobber.move();
+  jobber.show();
   for (int i = six7.size() - 1; i >= 0; i--) {  
     Asteroid speed = six7.get(i);
     speed.turn(speed.omega);
-    if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) ship.myCenterX, (float) ship.myCenterY) <= 30) {
+    if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) jobber.myCenterX, (float) jobber.myCenterY) <= 30) {
       six7.remove(i);  
       six7.add(new Asteroid());
     } else {
@@ -61,16 +61,16 @@ public void draw()
 
 
 void mouseClicked(){
-  ship.hyperspace();
+  jobber.hyperspace();
 }
 
 void keyPressed() { 
   if (key == CODED) {
-    if (keyCode == LEFT)  ship.turn(-ship.w); 
-    if (keyCode == RIGHT) ship.turn(+ship.w);
+    if (keyCode == LEFT)  jobber.turn(-jobber.w); 
+    if (keyCode == RIGHT) ship.turn(+jobber.w);
     if (keyCode == UP) {
-      ship.accelerate(ship.a);
-      ship.setAccelerating(true);
+      jobber.accelerate(jobber.a);
+      jobber.setAccelerating(true);
     }
   }
 }

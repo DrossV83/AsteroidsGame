@@ -67,7 +67,7 @@ void mouseClicked(){
 void keyPressed() { 
   if (key == CODED) {
     if (keyCode == LEFT)  jobber.turn(-jobber.w); 
-    if (keyCode == RIGHT) ship.turn(+jobber.w);
+    if (keyCode == RIGHT) ship.turn(jobber.w);
     if (keyCode == UP) {
       jobber.accelerate(jobber.a);
       jobber.setAccelerating(true);

@@ -1,6 +1,6 @@
-ArrayList <broken> sixsev = new ArrayList();
+ArrayList <broken> sixsev = new ArrayList<broken>();
 Airplane jobber;
-ArrayList <bullet> touhou = new ArrayList();
+ArrayList <bullet> touhou = new ArrayList<bullet>();
 Star[] whenfield;
 
 public void setup() 

@@ -1,5 +1,5 @@
 ArrayList <broken> sixsev = new ArrayList();
-Airplane jobber
+Airplane jobber;
 ArrayList <bullet> touhou = new ArrayList();
 Star[] whenfield;
 

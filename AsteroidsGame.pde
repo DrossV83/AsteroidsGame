@@ -1,4 +1,4 @@
-ArrayList<Asteroid> sixsev = new ArrayList();
+ArrayList <Asteroid> sixsev = new ArrayList();
 Airplane jobber
 ArrayList <bullet> touhou = new ArrayList();
 Star[] whenfield;

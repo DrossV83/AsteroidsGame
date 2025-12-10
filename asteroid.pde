@@ -1,6 +1,6 @@
-class Asteroid extends Floater{
+class broken extends Floater{
   protected double omega;
-  public Asteroid(){
+  public broken(){
     myColor = #EAEAEA;
     corners = 10; 
     omega = ((Math.random() * 2) - 1) ;

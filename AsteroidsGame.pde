@@ -1,4 +1,4 @@
-ArrayList <Asteroid> six7 = new ArrayList();
+ArrayList <Asteroid> sixsev = new ArrayList();
 Airplane jobber
 ArrayList <bullet> touhou = new ArrayList();
 Star[] whenfield;
@@ -13,7 +13,7 @@ public void setup()
   }
   
   for (int i = 0; i < 10; i++){  
-    six7.add(new Asteroid());
+    sixsev.add(new Asteroid());
   }
 }
 
@@ -26,12 +26,12 @@ public void draw()
   }
   jobber.move();
   jobber.show();
-  for (int i = six7.size() - 1; i >= 0; i--) {  
-    Asteroid speed = six7.get(i);
+  for (int i = sixsev.size() - 1; i >= 0; i--) {  
+    Asteroid speed = sixsev.get(i);
     speed.turn(speed.omega);
     if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) jobber.myCenterX, (float) jobber.myCenterY) <= 30) {
-      six7.remove(i);  
-      six7.add(new Asteroid());
+      sixsev.remove(i);  
+      sixsev.add(new Asteroid());
     } else {
       speed.move();
       }
@@ -43,14 +43,14 @@ public void draw()
   }
   
  
-  for(int i = six7.size() - 1; i >= 0; i--) {  
-      Asteroid speed = six7.get(i);
+  for(int i = sixsev.size() - 1; i >= 0; i--) {  
+      Asteroid speed = sixsev.get(i);
       for (int y = touhou.size() - 1; y >= 0; y--) {  
         bullet spell = touhou.get(y);
         if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) spell.myCenterX, (float) spell.myCenterY) <= 50) {
-          six7.remove(i);  // Remove asteroid
+          sixsev.remove(i);  // Remove asteroid
           touhou.remove(y);  // Remove bullet
-          six7.add(new Asteroid());
+          sixsev.add(new Asteroid());
          // break;  
         }
         

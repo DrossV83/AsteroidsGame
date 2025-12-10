@@ -13,7 +13,7 @@ public void setup()
   }
   
   for (int i = 0; i < 10; i++){  
-    sixsev.add(new Asteroid());
+    sixsev.add(new broken());
   }
 }
 
@@ -27,11 +27,11 @@ public void draw()
   jobber.move();
   jobber.show();
   for (int i = sixsev.size() - 1; i >= 0; i--) {  
-    Asteroid speed = sixsev.get(i);
+    broken speed = sixsev.get(i);
     speed.turn(speed.omega);
     if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) jobber.myCenterX, (float) jobber.myCenterY) <= 30) {
       sixsev.remove(i);  
-      sixsev.add(new Asteroid());
+      sixsev.add(new broken());
     } else {
       speed.move();
       }
@@ -44,13 +44,13 @@ public void draw()
   
  
   for(int i = sixsev.size() - 1; i >= 0; i--) {  
-      Asteroid speed = sixsev.get(i);
+      broken speed = sixsev.get(i);
       for (int y = touhou.size() - 1; y >= 0; y--) {  
         bullet spell = touhou.get(y);
         if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) spell.myCenterX, (float) spell.myCenterY) <= 50) {
-          sixsev.remove(i);  // Remove asteroid
+          sixsev.remove(i);  // Remove broken
           touhou.remove(y);  // Remove bullet
-          sixsev.add(new Asteroid());
+          sixsev.add(new broken());
          // break;  
         }
         

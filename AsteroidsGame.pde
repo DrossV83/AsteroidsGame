@@ -1,24 +1,19 @@
-//ArrayList <broken> sixsev = new ArrayList<broken>();
-//Airplane jobber;
-let jobber;
-//ArrayList <bullet> touhou = new ArrayList<bullet>();
-let sixsev = [];
-let touhou = [];
-let whenfield = [];
+Airplane ship;
+ArrayList <Asteroid> six7 = new ArrayList();
+ArrayList <bullet> touhou = new ArrayList();
 Star[] whenfield;
 
 public void setup() 
 {
   size(800, 800);
-  jobber = new Airplane();
+  ship = new Airplane();
   whenfield = new Star[100];
   for (int i = 0; i < whenfield.length; i++) {
     whenfield[i] = new Star();
   }
   
   for (int i = 0; i < 10; i++){  
-    //sixsev.add(new broken());
-    sixsev.push(new Broken());
+    six7.add(new Asteroid());
   }
 }
 
@@ -29,16 +24,14 @@ public void draw()
     whenfield[i].move();
     whenfield[i].show();
   }
-  jobber.move();
-  jobber.show();
-  for (int i = sixsev.size() - 1; i >= 0; i--) {  
-    broken speed = sixsev.get(i);
+  ship.move();
+  ship.show();
+  for (int i = six7.size() - 1; i >= 0; i--) {  
+    Asteroid speed = six7.get(i);
     speed.turn(speed.omega);
-    if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) jobber.myCenterX, (float) jobber.myCenterY) <= 30) {
-      //sixsev.remove(i);  
-      sixsev.splice(i, 1);
-      sixsev.push(new Broken());
-      //sixsev.add(new broken());
+    if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) ship.myCenterX, (float) ship.myCenterY) <= 30) {
+      six7.remove(i);  
+      six7.add(new Asteroid());
     } else {
       speed.move();
       }
@@ -50,17 +43,14 @@ public void draw()
   }
   
  
-  for(int i = sixsev.size() - 1; i >= 0; i--) {  
-      broken speed = sixsev.get(i);
+  for(int i = six7.size() - 1; i >= 0; i--) {  
+      Asteroid speed = six7.get(i);
       for (int y = touhou.size() - 1; y >= 0; y--) {  
         bullet spell = touhou.get(y);
         if (dist((float) speed.myCenterX, (float) speed.myCenterY, (float) spell.myCenterX, (float) spell.myCenterY) <= 50) {
-          //sixsev.remove(i);  
-          sixsev.splice(i, 1);
-          bullet.splice(y, 1);
-          //touhou.remove(y);  
-          sixsev.push(new Broken());
-          //sixsev.add(new broken());
+          six7.remove(i);  
+          touhou.remove(y);  
+          six7.add(new Asteroid());
          // break;  
         }
         
@@ -71,26 +61,25 @@ public void draw()
 
 
 void mouseClicked(){
-  jobber.hyperspace();
+  ship.hyperspace();
 }
 
 void keyPressed() { 
   if (key == CODED) {
-    if (keyCode == LEFT)  jobber.turn(-jobber.w); 
-    if (keyCode == RIGHT) jobber.turn(jobber.w);
+    if (keyCode == LEFT)  ship.turn(-ship.w); 
+    if (keyCode == RIGHT) ship.turn(+ship.w);
     if (keyCode == UP) {
-      jobber.accelerate(jobber.a);
-      jobber.setAccelerating(true);
+      ship.accelerate(ship.a);
+      ship.setAccelerating(true);
     }
   }
 }
 
 void keyReleased() {
   if (key == CODED && keyCode == UP) {
-    jobber.setAccelerating(false);
+    ship.setAccelerating(false);
   }
   if(key == ' ') {
-    touhou.push(new Bullet(jobber));
-    //touhou.add(new bullet(jobber));  
+    touhou.add(new bullet(ship));  
   }
 }

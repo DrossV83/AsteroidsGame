@@ -1,8 +1,10 @@
 //ArrayList <broken> sixsev = new ArrayList<broken>();
-Airplane jobber;
+//Airplane jobber;
+let jobber;
 //ArrayList <bullet> touhou = new ArrayList<bullet>();
 let sixsev = [];
 let touhou = [];
+let whenfield = [];
 Star[] whenfield;
 
 public void setup() 

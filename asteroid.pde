@@ -10,8 +10,6 @@ class Asteroid extends Floater {
     myPointDirection = 0.0;
     xCorners = new int[corners];  
     yCorners = new int[corners];  
-    
-    // Define asteroid corners (shape)
     int[][] cornerCoord = {
       {0, -40},  {20, -30},  {30, -10},  {15, 10}, 
       {5, 20},   {-10, 10},  {-20, -10}, {-10, -30}, 

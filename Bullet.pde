@@ -4,8 +4,8 @@ class bullet extends Floater {
     myCenterY = guh.myCenterY;
     myPointDirection = guh.returnAngle();
     
-    myXspeed = Math.cos(Math.toRadians(myPointDirection)) * 15;
-    myYspeed = Math.sin(Math.toRadians(myPointDirection)) * 15;
+    myXspeed = Math.cos(Math.PI/180 * myPointDirection) * 15;
+    myYspeed = Math.sin(Math.PI/180 * myPointDirection) * 15;
     xCorners = new int[]{-2, -2, 2, 2};
     yCorners = new int[]{10, -10, -10, 10};
   }

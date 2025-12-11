@@ -67,7 +67,7 @@ void mouseClicked(){
 void keyPressed() { 
   if (key == CODED) {
     if (keyCode == LEFT)  jobber.turn(-jobber.w); 
-    if (keyCode == RIGHT) ship.turn(jobber.w);
+    if (keyCode == RIGHT) jobber.turn(jobber.w);
     if (keyCode == UP) {
       jobber.accelerate(jobber.a);
       jobber.setAccelerating(true);
@@ -77,9 +77,9 @@ void keyPressed() {
 
 void keyReleased() {
   if (key == CODED && keyCode == UP) {
-    ship.setAccelerating(false);
+    jobber.setAccelerating(false);
   }
   if(key == ' ') {
-    touhou.add(new bullet(ship));  
+    touhou.add(new bullet(jobber));  
   }
 }
